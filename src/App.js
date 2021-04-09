@@ -23,6 +23,9 @@ function App() {
             <Route path="/signup">
               <SignUp />
             </Route>
+            {/* <Route path="/404">
+              <SignUp />
+            </Route> */}
           </Switch>
         </div>
       </div>
