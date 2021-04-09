@@ -6,6 +6,7 @@ function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [signUpMessage, setSignUpMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,12 +31,18 @@ function SignUp() {
         { headers: headers }
       )
       .then((res) => {
-        console.log("Answer from API: ", res);
+        console.log("Answer from API: ", res.data);
+        if (res.data.signedup) {
+          setSignUpMessage("You have been signed up!");
+        } else {
+          setSignUpMessage("Sign up failed!");
+        }
       })
       .catch((error) => {
         console.error("Axios error: ", error);
       });
   };
+  console.log("Sign Up Message: ", signUpMessage);
 
   return (
     <div>
@@ -80,9 +87,7 @@ function SignUp() {
         ></input>
         <br />
         <button type="submit">Sign up</button>
-        <p>Username: {username}</p>
-        <p>Email: {email}</p>
-        <p>Password: {password}</p>
+        <p>{signUpMessage}</p>
       </form>
     </div>
   );
