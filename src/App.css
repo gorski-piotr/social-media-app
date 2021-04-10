@@ -1,16 +1,22 @@
-.App {
+/* .App {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 20px;
-}
+  max-width: 1300px;
+  margin: 0 auto;
+} */
 
-.left-column {
-  background-color: aqua;
-  width: 120px;
+/* .left-column {
+  flex-basis: 25%;
 }
 
 .main-column {
-  background-color: green;
-  width: 70%;
-  padding: 5px;
+  text-align: center;
+  flex-basis: 49%;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  height: 100vh;
 }
+
+.right-column {
+  flex-basis: 25%;
+} */
