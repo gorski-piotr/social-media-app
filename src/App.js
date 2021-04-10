@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -15,22 +14,24 @@ const MainAppWrapper = styled.div`
 
 const LeftColumn = styled.div`
   flex-basis: 25%;
+  padding: 10px;
 `;
 
 const RightColumn = styled.div`
   flex-basis: 25%;
+  padding: 10px;
 `;
 
 const MainColumn = styled.div`
   text-align: center;
-  flex-basis: 49%;
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
+  flex-basis: 50%;
+  border-left: 1px solid var(--twitter-background);
+  border-right: 1px solid var(--twitter-background);
   height: 100vh;
 `;
 
 const SideColumnTitle = styled.h3`
-  color: blue;
+  color: var(--twitter-color);
 `;
 
 function App() {

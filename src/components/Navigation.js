@@ -1,24 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import styled from "styled-components";
+import MenuItem from "./MenuItem";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import HomeIcon from "@material-ui/icons/Home";
+
+const MenuList = styled.ul`
+  list-style-type: none;
+`;
 
 function Navigation() {
   return (
-    <div>
-      <h3>Navigation</h3>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/signup">Sign Up</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <TwitterIcon />
+      <MenuList>
+        <MenuItem page="/" text="Home" />
+        <MenuItem page="/login" text="Login" />
+        <MenuItem page="/signup" text="Sign Up" />
+      </MenuList>
+    </nav>
   );
 }
 
