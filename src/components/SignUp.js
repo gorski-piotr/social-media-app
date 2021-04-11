@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import Button from "./Button";
+import styled from "styled-components";
 
 function SignUp() {
   const [username, setUsername] = useState("");
@@ -152,7 +154,7 @@ function SignUp() {
           required
         />
         <br />
-        <button type="submit">Sign up</button>
+        <Button type="submit">Sign up</Button>
         <ul>{signUpMessage}</ul>
       </form>
     </div>

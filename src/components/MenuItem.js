@@ -1,21 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import HomeIcon from "@material-ui/icons/Home";
+
 const MenuItemLi = styled.li`
   color: black;
   font-size: 24px;
   font-weight: 700;
-  padding: 10px;
 `;
 
 const MenuItemLink = styled(Link)`
   text-decoration: none;
   color: black;
-  padding: 10px 25px;
   border-radius: 30px;
+  padding: 10px 15px;
+  width: fit-content;
+  display: flex;
+  margin-bottom: 20px;
   :hover {
     color: var(--twitter-color);
-    background-color: #e8f5fe;
+    background-color: var(--twitter-light-hover);
   }
 `;
 
