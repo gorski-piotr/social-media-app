@@ -2,6 +2,35 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import Button from "./Button";
+import styled from "styled-components";
+
+const MainWrapper = styled.div`
+  display: block;
+`;
+
+const PageTitle = styled.h1`
+  text-align: center;
+`;
+
+const StyledForm = styled.form`
+  width: 100%;
+  padding: 60px;
+`;
+
+const StyledInput = styled.input`
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--twitter-background);
+  border: solid 1px var(--twitter-color);
+  margin-top: 5px;
+  margin-bottom: 15px;
+`;
+
+const SignUpMessage = styled.ul`
+  margin-top: 20px;
+  list-style-type: none;
+`;
 
 function SignUp() {
   const [username, setUsername] = useState("");
@@ -106,11 +135,11 @@ function SignUp() {
   };
 
   return (
-    <div>
-      <h2>Sign up</h2>
-      <form onSubmit={handleSubmit}>
+    <MainWrapper>
+      <PageTitle>Sign up</PageTitle>
+      <StyledForm onSubmit={handleSubmit}>
         <label htmlFor="username">Username: </label>
-        <input
+        <StyledInput
           type="text"
           name="username"
           id="username"
@@ -119,9 +148,8 @@ function SignUp() {
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-        <br />
         <label htmlFor="email">E-mail: </label>
-        <input
+        <StyledInput
           type="email"
           name="email"
           id="email"
@@ -130,9 +158,8 @@ function SignUp() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <br />
         <label htmlFor="password">Password: </label>
-        <input
+        <StyledInput
           type="password"
           id="password"
           name="password"
@@ -141,9 +168,8 @@ function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <br />
         <label htmlFor="password-confirm">Confirm password: </label>
-        <input
+        <StyledInput
           type="password"
           id="password-confirm"
           name="password-confirm"
@@ -152,11 +178,10 @@ function SignUp() {
           onChange={(e) => setPasswordConfirm(e.target.value)}
           required
         />
-        <br />
         <Button type="submit">Sign Up</Button>
-        <ul>{signUpMessage}</ul>
-      </form>
-    </div>
+        <SignUpMessage>{signUpMessage}</SignUpMessage>
+      </StyledForm>
+    </MainWrapper>
   );
 }
 

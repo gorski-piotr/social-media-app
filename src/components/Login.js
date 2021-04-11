@@ -2,6 +2,35 @@ import React from "react";
 import { useState } from "react";
 import Button from "./Button";
 import axios from "axios";
+import MyInput from "./MyInput";
+import styled from "styled-components";
+
+const MainWrapper = styled.div`
+  display: block;
+`;
+
+const PageTitle = styled.h1`
+  text-align: center;
+`;
+
+const StyledForm = styled.form`
+  width: 100%;
+  padding: 60px;
+`;
+
+const StyledInput = styled.input`
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--twitter-background);
+  border: solid 1px var(--twitter-color);
+  margin-top: 5px;
+  margin-bottom: 15px;
+`;
+
+const LogInMessage = styled.p`
+  margin-top: 20px;
+`;
 
 function LogIn() {
   const [username, setUsername] = useState("");
@@ -49,11 +78,11 @@ function LogIn() {
   };
 
   return (
-    <div>
-      <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
+    <MainWrapper>
+      <PageTitle>Log In</PageTitle>
+      <StyledForm onSubmit={handleSubmit}>
         <label htmlFor="username">Username: </label>
-        <input
+        <StyledInput
           type="text"
           name="username"
           id="username"
@@ -62,9 +91,8 @@ function LogIn() {
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-        <br />
         <label htmlFor="password">Password: </label>
-        <input
+        <StyledInput
           type="password"
           id="password"
           name="password"
@@ -73,11 +101,10 @@ function LogIn() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <br />
         <Button type="submit">Log In</Button>
-      </form>
-      <p>{logInMessage}</p>
-    </div>
+        <LogInMessage>{logInMessage}</LogInMessage>
+      </StyledForm>
+    </MainWrapper>
   );
 }
 

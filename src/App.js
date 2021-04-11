@@ -23,7 +23,6 @@ const RightColumn = styled.div`
 `;
 
 const MainColumn = styled.div`
-  text-align: center;
   flex-basis: 60%;
   border-left: 1px solid var(--twitter-background);
   border-right: 1px solid var(--twitter-background);
