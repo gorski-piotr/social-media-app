@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import Button from "./Button";
-import styled from "styled-components";
 
 function SignUp() {
   const [username, setUsername] = useState("");
@@ -20,7 +19,7 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submit button pressed");
+    console.log("Sign In button pressed");
     setSignUpMessage("");
 
     let errors = [];
@@ -154,7 +153,7 @@ function SignUp() {
           required
         />
         <br />
-        <Button type="submit">Sign up</Button>
+        <Button type="submit">Sign Up</Button>
         <ul>{signUpMessage}</ul>
       </form>
     </div>

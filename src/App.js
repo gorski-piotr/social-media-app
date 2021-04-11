@@ -1,9 +1,9 @@
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import styled from "styled-components";
+import LogIn from "./components/LogIn";
 
 const MainAppWrapper = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/login">
-              <Login />
+              <LogIn />
             </Route>
             <Route path="/signup">
               <SignUp />

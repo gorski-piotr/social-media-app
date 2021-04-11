@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import MenuItem from "./MenuItem";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import HomeIcon from "@material-ui/icons/Home";
 import Button from "./Button";
 
 const MenuList = styled.ul`
@@ -28,7 +27,7 @@ function Navigation() {
       <TwitterIconStyled />
       <MenuList>
         <MenuItem page="/" text="Home" />
-        <MenuItem page="/login" text="Login" />
+        <MenuItem page="/login" text="Log in" />
         <MenuItem page="/signup" text="Sign Up" />
       </MenuList>
       <Button>Tweet</Button>
