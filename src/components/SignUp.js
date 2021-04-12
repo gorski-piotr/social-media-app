@@ -1,14 +1,14 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import Button from "./Button";
+import Button from "../styles/Button";
 import {
   MainWrapper,
   PageTitle,
   StyledForm,
   StyledInput,
   SignUpMessage,
-} from "./FormStyles";
+} from "../styles/FormStyles";
 
 function SignUp() {
   const [username, setUsername] = useState("");

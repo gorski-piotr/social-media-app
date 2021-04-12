@@ -34,6 +34,10 @@ const SideColumnTitle = styled.h3`
   color: var(--twitter-color);
 `;
 
+const handleToken = (userToken) => {
+  console.log("User Token: ", userToken);
+};
+
 function App() {
   return (
     <Router>
@@ -47,7 +51,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/login">
-              <LogIn />
+              <LogIn tokenMethod={handleToken} />
             </Route>
             <Route path="/signup">
               <SignUp />
@@ -58,7 +62,10 @@ function App() {
           </Switch>
         </MainColumn>
         <RightColumn>
-          <SideColumnTitle>Right column</SideColumnTitle>
+          <SideColumnTitle>
+            Right column
+            <br />
+          </SideColumnTitle>
         </RightColumn>
       </MainAppWrapper>
     </Router>

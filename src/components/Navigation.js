@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MenuItem from "./MenuItem";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import Button from "./Button";
+import Button from "../styles/Button";
 
 const MenuList = styled.ul`
   list-style-type: none;

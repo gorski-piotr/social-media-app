@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Button from "./Button";
+import Button from "../styles/Button";
 import axios from "axios";
 import {
   MainWrapper,
@@ -8,9 +8,9 @@ import {
   StyledForm,
   StyledInput,
   LogInMessage,
-} from "./FormStyles";
+} from "../styles/FormStyles";
 
-function LogIn() {
+function LogIn(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [logInMessage, setLogInMessage] = useState("");
@@ -18,6 +18,10 @@ function LogIn() {
   const formReset = () => {
     setUsername("");
     setPassword("");
+  };
+
+  const handleToken = (userToken) => {
+    props.tokenMethod(userToken);
   };
 
   const handleSubmit = (e) => {
@@ -45,6 +49,7 @@ function LogIn() {
         console.log("Answer from API: ", res.data);
         if (res.data.jwt_token) {
           setLogInMessage("You have been logged in!");
+          handleToken(res.data.jwt_token);
         } else {
           setLogInMessage("Check your username or password!");
         }
