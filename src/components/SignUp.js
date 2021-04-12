@@ -2,35 +2,13 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import Button from "./Button";
-import styled from "styled-components";
-
-const MainWrapper = styled.div`
-  display: block;
-`;
-
-const PageTitle = styled.h1`
-  text-align: center;
-`;
-
-const StyledForm = styled.form`
-  width: 100%;
-  padding: 60px;
-`;
-
-const StyledInput = styled.input`
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: var(--twitter-background);
-  border: solid 1px var(--twitter-color);
-  margin-top: 5px;
-  margin-bottom: 15px;
-`;
-
-const SignUpMessage = styled.ul`
-  margin-top: 20px;
-  list-style-type: none;
-`;
+import {
+  MainWrapper,
+  PageTitle,
+  StyledForm,
+  StyledInput,
+  SignUpMessage,
+} from "./FormStyles";
 
 function SignUp() {
   const [username, setUsername] = useState("");
@@ -136,7 +114,7 @@ function SignUp() {
 
   return (
     <MainWrapper>
-      <PageTitle>Sign up</PageTitle>
+      <PageTitle>Sign Up</PageTitle>
       <StyledForm onSubmit={handleSubmit}>
         <label htmlFor="username">Username: </label>
         <StyledInput

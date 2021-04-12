@@ -2,35 +2,13 @@ import React from "react";
 import { useState } from "react";
 import Button from "./Button";
 import axios from "axios";
-import MyInput from "./MyInput";
-import styled from "styled-components";
-
-const MainWrapper = styled.div`
-  display: block;
-`;
-
-const PageTitle = styled.h1`
-  text-align: center;
-`;
-
-const StyledForm = styled.form`
-  width: 100%;
-  padding: 60px;
-`;
-
-const StyledInput = styled.input`
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: var(--twitter-background);
-  border: solid 1px var(--twitter-color);
-  margin-top: 5px;
-  margin-bottom: 15px;
-`;
-
-const LogInMessage = styled.p`
-  margin-top: 20px;
-`;
+import {
+  MainWrapper,
+  PageTitle,
+  StyledForm,
+  StyledInput,
+  LogInMessage,
+} from "./FormStyles";
 
 function LogIn() {
   const [username, setUsername] = useState("");
