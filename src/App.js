@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import styled from "styled-components";
 import LogIn from "./components/LogIn";
+import { useState } from "react";
 
 const MainAppWrapper = styled.div`
   display: flex;
@@ -34,11 +35,14 @@ const SideColumnTitle = styled.h3`
   color: var(--twitter-color);
 `;
 
-const handleToken = (userToken) => {
-  console.log("User Token: ", userToken);
-};
-
 function App() {
+  const [token, setToken] = useState("");
+
+  const handleToken = (userToken) => {
+    console.log("User Token: ", userToken);
+    setToken(userToken);
+  };
+
   return (
     <Router>
       <MainAppWrapper>
