@@ -41,6 +41,8 @@ function App() {
   const handleToken = (userToken) => {
     console.log("User Token: ", userToken);
     setToken(userToken);
+    localStorage.setItem("userToken", userToken);
+    console.log("local storage: ", localStorage);
   };
 
   return (
