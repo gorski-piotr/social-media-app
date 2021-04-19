@@ -22,7 +22,7 @@ const TwitterIconStyled = styled(TwitterIcon)`
 `;
 
 function Navigation(props) {
-  if (props.loggedIn) {
+  if (props.token) {
     return (
       <nav>
         <TwitterIconStyled />
