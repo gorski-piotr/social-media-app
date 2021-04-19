@@ -37,19 +37,21 @@ const SideColumnTitle = styled.h3`
 
 function App() {
   const [token, setToken] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleToken = (userToken) => {
     console.log("User Token: ", userToken);
     setToken(userToken);
     localStorage.setItem("userToken", userToken);
     console.log("local storage: ", localStorage);
+    setLoggedIn(true);
   };
 
   return (
     <Router>
       <MainAppWrapper>
         <LeftColumn>
-          <Navigation />
+          <Navigation loggedIn={loggedIn} />
         </LeftColumn>
         <MainColumn>
           <Switch>

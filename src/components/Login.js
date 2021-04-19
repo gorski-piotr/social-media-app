@@ -9,11 +9,14 @@ import {
   StyledInput,
   LogInMessage,
 } from "../styles/FormStyles";
+import { useHistory } from "react-router-dom";
 
 function LogIn(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [logInMessage, setLogInMessage] = useState("");
+
+  let history = useHistory();
 
   const formReset = () => {
     setUsername("");
@@ -50,6 +53,7 @@ function LogIn(props) {
         if (res.data.jwt_token) {
           setLogInMessage("You have been logged in!");
           handleToken(res.data.jwt_token);
+          history.push("/");
         } else {
           setLogInMessage("Check your username or password!");
         }

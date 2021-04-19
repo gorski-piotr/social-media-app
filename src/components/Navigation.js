@@ -21,18 +21,30 @@ const TwitterIconStyled = styled(TwitterIcon)`
   }
 `;
 
-function Navigation() {
-  return (
-    <nav>
-      <TwitterIconStyled />
-      <MenuList>
-        <MenuItem page="/" text="Home" />
-        <MenuItem page="/login" text="Log in" />
-        <MenuItem page="/signup" text="Sign Up" />
-      </MenuList>
-      <Button>Tweet</Button>
-    </nav>
-  );
+function Navigation(props) {
+  if (props.loggedIn) {
+    return (
+      <nav>
+        <TwitterIconStyled />
+        <MenuList>
+          <MenuItem page="/" text="Home" />
+          <MenuItem page="/logout" text="Log out" />
+        </MenuList>
+        <Button>Tweet</Button>
+      </nav>
+    );
+  } else
+    return (
+      <nav>
+        <TwitterIconStyled />
+        <MenuList>
+          <MenuItem page="/" text="Home" />
+          <MenuItem page="/login" text="Log in" />
+          <MenuItem page="/signup" text="Sign Up" />
+        </MenuList>
+        <Button>Tweet</Button>
+      </nav>
+    );
 }
 
 export default Navigation;
