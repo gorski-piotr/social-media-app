@@ -47,23 +47,21 @@ function App() {
     // console.log("local storage: ", localStorage);
   };
 
-  const handleRemoveToken = () => {
-    // setToken(localStorage.getItem("userToken"));
-
+  const handleLogOut = () => {
     const headers = {
       "Content-Type": "application/json",
       Accept: "application/json",
       Authorization: "Bearer " + token,
     };
 
-    let data = { username: "adam", password: "1234" };
+    let data = {};
 
     axios
       .post("https://akademia108.pl/api/social-app/user/logout", data, {
         headers: headers,
       })
       .then((res) => {
-        console.log("Answer from API: ", res);
+        console.log("LOGOUT Answer from API: ", res);
         if (res.data.message === "Successfully logged out") {
           alert(res.data.message);
           localStorage.removeItem("userToken");
@@ -79,7 +77,7 @@ function App() {
     <Router>
       <MainAppWrapper>
         <LeftColumn>
-          <Navigation handleRemoveToken={handleRemoveToken} token={token} />
+          <Navigation handleLogOut={handleLogOut} token={token} />
         </LeftColumn>
         <MainColumn>
           <Switch>

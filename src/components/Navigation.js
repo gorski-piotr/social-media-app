@@ -41,18 +41,13 @@ const LogOutLi = styled.li`
 `;
 
 function Navigation(props) {
-  const handleLogOut = () => {
-    // localStorage.removeItem("userToken");
-    // alert("You have been logged out!");
-    props.handleRemoveToken();
-  };
   if (props.token) {
     return (
       <nav>
         <TwitterIconStyled />
         <MenuList>
           <MenuItem page="/" text="Home" />
-          <LogOutLi onClick={handleLogOut}>Log out</LogOutLi>
+          <LogOutLi onClick={props.handleLogOut}>Log out</LogOutLi>
         </MenuList>
         <Button>Tweet</Button>
       </nav>
