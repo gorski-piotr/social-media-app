@@ -5,6 +5,7 @@ import SignUp from "./components/SignUp";
 import styled from "styled-components";
 import LogIn from "./components/LogIn";
 import { useState } from "react";
+import axios from "axios";
 
 const MainAppWrapper = styled.div`
   display: flex;
@@ -47,7 +48,31 @@ function App() {
   };
 
   const handleRemoveToken = () => {
-    setToken(localStorage.getItem("userToken"));
+    // setToken(localStorage.getItem("userToken"));
+
+    const headers = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: "Bearer " + token,
+    };
+
+    let data = { username: "adam", password: "1234" };
+
+    axios
+      .post("https://akademia108.pl/api/social-app/user/logout", data, {
+        headers: headers,
+      })
+      .then((res) => {
+        console.log("Answer from API: ", res);
+        if (res.data.message === "Successfully logged out") {
+          alert(res.data.message);
+          localStorage.removeItem("userToken");
+          setToken(localStorage.getItem("userToken"));
+        }
+      })
+      .catch((error) => {
+        console.error("Axios error: ", error);
+      });
   };
 
   return (

@@ -42,8 +42,8 @@ const LogOutLi = styled.li`
 
 function Navigation(props) {
   const handleLogOut = () => {
-    localStorage.removeItem("userToken");
-    alert("You have been logged out!");
+    // localStorage.removeItem("userToken");
+    // alert("You have been logged out!");
     props.handleRemoveToken();
   };
   if (props.token) {
