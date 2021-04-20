@@ -37,19 +37,24 @@ const SideColumnTitle = styled.h3`
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("userToken"));
-  console.log("TOKEN: ", token);
+  // console.log("TOKEN: ", token);
 
   const handleToken = (userToken) => {
-    console.log("User Token: ", userToken);
+    // console.log("User Token: ", userToken);
     setToken(userToken);
     localStorage.setItem("userToken", userToken);
-    console.log("local storage: ", localStorage);
+    // console.log("local storage: ", localStorage);
   };
+
+  const handleRemoveToken = () => {
+    setToken(localStorage.getItem("userToken"));
+  };
+
   return (
     <Router>
       <MainAppWrapper>
         <LeftColumn>
-          <Navigation token={token} />
+          <Navigation handleRemoveToken={handleRemoveToken} token={token} />
         </LeftColumn>
         <MainColumn>
           <Switch>

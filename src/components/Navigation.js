@@ -21,14 +21,38 @@ const TwitterIconStyled = styled(TwitterIcon)`
   }
 `;
 
+const LogOutLi = styled.li`
+  text-decoration: none;
+  color: black;
+  border-radius: 30px;
+  padding: 10px 15px;
+  width: fit-content;
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  border: none;
+  background-color: white;
+  :hover {
+    color: var(--twitter-color);
+    background-color: var(--twitter-light-hover);
+    cursor: pointer;
+  }
+`;
+
 function Navigation(props) {
+  const handleLogOut = () => {
+    localStorage.removeItem("userToken");
+    alert("You have been logged out!");
+    props.handleRemoveToken();
+  };
   if (props.token) {
     return (
       <nav>
         <TwitterIconStyled />
         <MenuList>
           <MenuItem page="/" text="Home" />
-          <MenuItem page="/logout" text="Log out" />
+          <LogOutLi onClick={handleLogOut}>Log out</LogOutLi>
         </MenuList>
         <Button>Tweet</Button>
       </nav>

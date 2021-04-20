@@ -29,7 +29,7 @@ function LogIn(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Log In button pressed");
+    // console.log("Log In button pressed");
 
     let loginDetails = {
       username,
@@ -49,9 +49,9 @@ function LogIn(props) {
         { headers: headers }
       )
       .then((res) => {
-        console.log("Answer from API: ", res.data);
+        // console.log("Answer from API: ", res.data);
         if (res.data.jwt_token) {
-          setLogInMessage("You have been logged in!");
+          alert("You have been logged in!");
           handleToken(res.data.jwt_token);
           history.push("/");
         } else {
