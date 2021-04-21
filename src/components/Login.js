@@ -56,8 +56,8 @@ function LogIn(props) {
           history.push("/");
         } else {
           setLogInMessage("Check your username or password!");
+          formReset();
         }
-        formReset();
       })
       .catch((error) => {
         console.error("Axios error: ", error);
