@@ -82,7 +82,7 @@ function App() {
         <MainColumn>
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home token={token} />
             </Route>
             <Route path="/login">
               <LogIn tokenMethod={handleToken} />
