@@ -1,13 +1,14 @@
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 
 function Home(props) {
   const [posts, setPosts] = useState([]);
 
-  const handleShowPosts = () => {
+  //useEffect with empty array as a second parameter will run the code only once (onMount)
+  useEffect(() => {
     // axios beggining
     const headers = {
       "Content-Type": "application/json",
@@ -30,7 +31,7 @@ function Home(props) {
         console.error("Axios error: ", error);
       });
     // axios end
-  };
+  }, []);
 
   console.log("posts state: ", posts);
 
@@ -45,7 +46,6 @@ function Home(props) {
         <br />
         <hr />
         <br />
-        <button onClick={handleShowPosts}>Show posts!</button>
         {posts.map((post) => {
           return <Post key={post.id} content={post.content} />;
         })}
