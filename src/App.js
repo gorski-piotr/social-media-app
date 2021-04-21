@@ -6,6 +6,7 @@ import styled from "styled-components";
 import LogIn from "./components/LogIn";
 import { useState } from "react";
 import axios from "axios";
+import Recomendations from "./components/Recomendations";
 
 const MainAppWrapper = styled.div`
   display: flex;
@@ -97,9 +98,11 @@ function App() {
         </MainColumn>
         <RightColumn>
           <SideColumnTitle>
-            Right column
+            Follow recomendations
             <br />
           </SideColumnTitle>
+          {token && <Recomendations token={token} />}
+          {!token && <div>Log in to check recomendations!</div>}
         </RightColumn>
       </MainAppWrapper>
     </Router>
